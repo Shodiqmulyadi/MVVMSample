@@ -12,8 +12,8 @@ public class TVShowDetails {
     @SerializedName("description")
     private String description;
 
-    @SerializedName("rountime")
-    private String rountime;
+    @SerializedName("runtime")
+    private String runtime;
 
     @SerializedName("image_path")
     private String imagePath;
@@ -38,8 +38,8 @@ public class TVShowDetails {
         return description;
     }
 
-    public String getRountime() {
-        return rountime;
+    public String getRuntime() {
+        return runtime;
     }
 
     public String getImagePath() {

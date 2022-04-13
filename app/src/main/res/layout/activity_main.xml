@@ -49,7 +49,7 @@
                 android:textSize="@dimen/_14ssp"/>
             
             <ImageView
-                android:id="@+id/ImageWatchList"
+                android:id="@+id/imageWatchList"
                 android:layout_width="@dimen/_24sdp"
                 android:layout_height="@dimen/_24sdp"
                 android:layout_marginEnd="@dimen/_8sdp"

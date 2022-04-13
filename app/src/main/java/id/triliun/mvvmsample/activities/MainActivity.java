@@ -2,7 +2,6 @@ package id.triliun.mvvmsample.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements TVShowListener {
                 }
             }
         });
+        activityMainBinding.imageWatchList.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), WatchlistActivity.class)));
         getMostPopularTVShows();
 
     }
@@ -89,19 +89,12 @@ public class MainActivity extends AppCompatActivity implements TVShowListener {
                 activityMainBinding.setIsLoadingMore(true);
             }
         }
-
-        Log.e("xxxxx", String.valueOf(activityMainBinding.getIsLoading()));
     }
 
     @Override
     public void onTVShowClicked(TVShow tvShow) {
         Intent intent = new Intent(getApplicationContext(), TVShowDetailActivity.class);
-        intent.putExtra("id", tvShow.getId());
-        intent.putExtra("name", tvShow.getName());
-        intent.putExtra("startDate", tvShow.getStartDate());
-        intent.putExtra("country", tvShow.getCountry());
-        intent.putExtra("network", tvShow.getNetwork());
-        intent.putExtra("status", tvShow.getStatus());
+        intent.putExtra("tvShow", tvShow);
         startActivity(intent);
 
     }
